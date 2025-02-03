@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://Spatial.gd" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="SphereMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1575 )
+script = ExtResource( 2 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 5.40579, 0, 0, 0, 5.40579, 0, 0, 0, 5.40579, 0, 0, -8.66579 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+shape = SubResource( 1 )
+
+[node name="CSGMesh" type="CSGMesh" parent="KinematicBody/CollisionShape"]
+transform = Transform( 1.00313, 0, 0, 0, 1.00313, 0, 0, 0, 1.00313, 0, 0, 0 )
+mesh = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -79.3087, 0.838132, -1.94244e-08, -60.9108, -1.09129, -1.49183e-08, -2.44921e-06, 6.11067e-15, 1, 9.93761, 4.56187, 10.082 )
+fov = 143.438
+near = 0.26
+far = 4796.1
+__meta__ = {
+"_edit_group_": true
+}
